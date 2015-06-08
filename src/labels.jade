@@ -1,0 +1,98 @@
+block variables
+  - title = 'Labels'
+extends _layouts/docs
+
+block body
+
+  h1 Labels
+  h3.sh.mb-20 Labels are useful inline styles that can be dropped into body copy to call out certain sections or to attach metadata. For example, you can attach a label that notes when something was updated.
+  span.mb-10.mr-15.lb Regular Label
+  span.mb-10.mr-15.lb.ra.a Radius Active Label
+  span.mb-10.mr-15.lb.rd.d Round Danger Label
+  span.mb-10.mr-15.lb.w Warning Label
+  span.mb-10.mr-15.lb.s Success Label
+  span.mb-10.lb.i Info Label
+  hr
+
+  .rw
+    .cl.md-6
+      h2 Basic
+      p You can create a label using minimal markup.
+      h4 HTML
+      pre
+        code(data-language="html")
+          span.lb Regular Label
+      h4 Rendered HTML
+      span.lb Regular Label
+    .cl.md-6
+      h2 Advanced
+      p Additional classes can be added to your labels to changes their appearance.
+      h4 HTML
+      pre
+        code(data-language="html").
+          <span class="lb [a s i d e w cls] [ra rd]">
+            Advanced Label
+          </span>
+      h4 Rendered HTML
+      span.mr-10.mb-10.lb.a span.lb.a
+      span.mr-10.mb-10.lb.s.ra span.lb.s.ra
+      span.mr-10.mb-10.lb.i.rd span.lb.i.rd
+      span.mr-10.mb-10.lb.d span.lb.d
+      span.mr-10.mb-10.lb.w.ra span.lb.w.ra
+      span.mr-10.mb-10.lb.cls.rd span.lb.cls.rd
+  hr
+
+  h2 Customize with Stylus
+  p Labels can be easily customized using our Stylus variables.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/labels.settings.styl
+  hr
+
+  h2 Semantic Markup with Stylus
+  p You can create your own labels using Stylus mixins.
+  h3 Basic
+  p You can use the
+    span.class create-label()
+    | mixin to create your own labels, like so:
+  h4 Stylus
+  pre
+    code(data-language="html").
+      .custom-label-class
+        create-label()
+  h4 HTML
+  pre
+    code(data-language="html").
+      <span class="custom-label-class">...</span>
+  h3 Advanced
+  p You can further customize your labels using the provided options in
+    span.class create-label()
+    | mixin:
+  h4 Stylus
+  code
+    pre(data-language="stylus").
+      .custom-label-class
+        // Using the available options with default values as shown below.
+        create-label(
+          margin-bottom = label-margin-bottom,
+          padding = label-padding-top label-padding-right label-padding-bottom label-padding-left,
+          background-color = secondary-color,
+          border-radius = label-default-radius,
+          font-size = button-medium-font-size,
+          font-weight = button-medium-font-weight,
+          font-family = button-font-family,
+          line-height = label-line-height
+        )
+  h4 HTML
+  code
+    pre(data-language="html").
+      <span class="custom-label-class">...</span>
+  hr
+
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/labels'

@@ -1,0 +1,217 @@
+block variables
+  - title = 'Breadcrumbs'
+extends _layouts/docs
+
+block body
+
+  h1 Breadcrumbs
+  h3.sh.mb-20 Breadcrumbs come in handy to show a navigation trail for users throught a site or app. They'll fill ouut 100% of the width of their parent container.
+  hr
+
+  ul.bc
+    li
+      a(href="#") gia.ui
+    li
+      a(href="#") Docs
+    li.u
+      a(href="#") Breadcrumbs
+    li.c
+      a(href="#") Examples
+  hr
+
+  h2 Basic
+  p Add a class of breadcrumbs class
+    span.class .bc
+    | to a
+    span.class ul
+    | element. List items will automatically be styled, and you can add current class
+    span.class .c
+    | or unavailable class
+    span.class .u
+    | to list items to denote their state.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="bc">
+            <li><a href="#">gia.ui</a></li>
+            <li><a href="#">Docs</a></li>
+            <li class="u"><a href="#">Breadcrumbs</a></li>
+            <li class="c"><a href="#">Examples</a></li>
+          </ul>
+    .cl.md-6
+      h4 Rendered HTML
+      ul.bc
+        li
+          a(href="#") gia.ui
+        li
+          a(href="#") Docs
+        li.u
+          a(href="#") Breadcrumbs
+        li.c
+          a(href="#") Examples
+  p You can also add a breadcrumbs class
+    span.class .bc
+    | to a
+    span.class nav
+    | element containing anchor links to get the same result.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <nav class="bc">
+            <a href="#">gia.ui</a>
+            <a href="#">Docs</a>
+            <a href="#" class="u">Breadcrumbs</a>
+            <a href="#" class="c">Examples</a>
+          </nav>
+    .cl.md-6
+      h4 Rendered HTML
+      nav.bc
+        a(href="#") gia.ui
+        a(href="#") Docs
+        a(href="#").u Breadcrumbs
+        a(href="#").c Examples
+  hr
+
+  h2 Breadcrumbs Themes
+  p Additional classes can be added to your component to change its theme and shape.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="bc [li da] [bd] [ra rd]">
+            <li><a href="#">gia.ui</a></li>
+            <li><a href="#">Docs</a></li>
+            <li class="u"><a href="#">Breadcrumbs</a></li>
+            <li class="c"><a href="#">Examples</a></li>
+          </ul>
+    .cl.md-6
+      ul.bc
+        li
+          a(href="#") gia.ui
+        li
+          a(href="#") Docs
+        li.u
+          a(href="#") Breadcrumbs
+        li.c
+          a(href="#") Examples
+      ul.bc.li.ra
+        li
+          a(href="#") gia.ui
+        li
+          a(href="#") Docs
+        li.u
+          a(href="#") Breadcrumbs
+        li.c
+          a(href="#") Examples
+      ul.bc.da.ra
+        li
+          a(href="#") gia.ui
+        li
+          a(href="#") Docs
+        li.u
+          a(href="#") Breadcrumbs
+        li.c
+          a(href="#") Examples
+      ul.bc.li.bd.rd
+        li
+          a(href="#") gia.ui
+        li
+          a(href="#") Docs
+        li.u
+          a(href="#") Breadcrumbs
+        li.c
+          a(href="#") Examples
+  hr
+
+  h2 Accessibility
+  p Use this snippet to make breadcrumbs more accessible. Adding the role attribute gives context to a screen reader. The
+    span.class aria-label
+    | attribute will allow a screen reader to call out what the component is to the users. We added some styles so the screen reader skips the
+    span.class /
+    | . Using the
+    span.class Tab
+    | button, a user can navigate until they're reached the link below. (Use 
+    span.class Shift + Tab
+    | to navigate back one step.)
+  p If you are using an unavailable
+    span.class .u
+    | links, give it an
+    span.class aria-disabled
+    | attribute as in this example:
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="bc" role="menubar" aria-label="breadcrumbs">
+            <li role="menuitem"><a href="#">gia.ui</a></li>
+            <li role="menuitem"><a href="#">Docs</a></li>
+            <li role="menuitem" class="u" aria-disabled="true"><a href="#">Breadcrumbs</a></li>
+            <li role="menuitem" class="c"><a href="#">Examples</a></li>
+          </ul>
+    .cl.md-6
+      h4 Rendered HTML
+      ul.bc(role="menubar", aria-label="breadcrumbs")
+        li(role="menuitem")
+          a(href="#") gia.ui
+        li(role="menuitem")
+          a(href="#") Docs
+        li(role="menuitem", aria-disabled="true").u
+          a(href="#") Breadcrumbs
+        li(role="menuitem").c
+          a(href="#") Examples
+  p
+    strong Note: 
+    | It is bad practice to leave links that do not go anywhere on your live site. Use something like
+    span.class foo.html
+    | to fill them as you build.
+  hr
+
+  h2 Customize with Stylus
+  p Breadcrumbs can be easily customized using our Stylus variables.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/breadcrumbs.settings.styl
+  hr
+
+  h2 Semantic Markup with Stylus
+  p You can apply breadcrumbs styles to semantic markup using Stylus mixins.
+  h3 Basic
+  p Include the
+    span.class create-breadcrumb-container()
+    | mixin to style your own breadcrumbs container with semantic markup and include the
+    span.class create-breadcrumb-items()
+    | mixin for each breadcrumb item, like so:
+  .rw
+    .cl.md-6
+      h4 Stylus
+      pre
+        code(data-language="stylus").
+          .your-class-name
+            create-breadcrumb-container()
+            > li
+              create-breadcrumb-items()
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="your-class-name">
+            <li><a href="#">gia.ui</a></li>
+            <li><a href="#">Docs</a></li>
+            <li class="u"><a href="#">Breadcrumbs</a></li>
+            <li class="c"><a href="#">Examples</a></li>
+          </ul>
+  hr
+
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/breadcrumbs'

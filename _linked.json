@@ -1,0 +1,215 @@
+{
+    "jade": [
+        "src/_elements/docs/left-menu.jade",
+        "src/_layouts/docs.jade",
+        "src/block-grids.jade",
+        "src/breadcrumbs.jade",
+        "src/buttons.jade",
+        "src/grids.jade",
+        "src/index.jade",
+        "src/javascript-utilities.jade",
+        "src/kitchen-sink.jade",
+        "src/labels.jade",
+        "src/media-queries.jade",
+        "src/right-to-left.jade",
+        "src/top-bar.jade",
+        "src/types.jade",
+        "src/utility-classes.jade",
+        "src/visibility.jade"
+    ],
+    "stylus": [
+        "src/css/ui/_components/bases.settings.styl",
+        "src/css/ui/_components/bases.styl",
+        "src/css/ui/_components/block-grids.settings.styl",
+        "src/css/ui/_components/block-grids.styl",
+        "src/css/ui/_components/breadcrumbs.settings.styl",
+        "src/css/ui/_components/breadcrumbs.styl",
+        "src/css/ui/_components/buttons.settings.styl",
+        "src/css/ui/_components/buttons.styl",
+        "src/css/ui/_components/content-slider.settings.styl",
+        "src/css/ui/_components/content-slider.styl",
+        "src/css/ui/_components/dropdowns.settings.styl",
+        "src/css/ui/_components/dropdowns.styl",
+        "src/css/ui/_components/functions.styl",
+        "src/css/ui/_components/grids.settings.styl",
+        "src/css/ui/_components/grids.styl",
+        "src/css/ui/_components/helpers.styl",
+        "src/css/ui/_components/labels.settings.styl",
+        "src/css/ui/_components/labels.styl",
+        "src/css/ui/_components/media-queries.settings.styl",
+        "src/css/ui/_components/off-screen-menus.settings.styl",
+        "src/css/ui/_components/off-screen-menus.styl",
+        "src/css/ui/_components/top-bar.settings.styl",
+        "src/css/ui/_components/top-bar.styl",
+        "src/css/ui/_components/types.settings.styl",
+        "src/css/ui/_components/types.styl",
+        "src/css/ui/_components/utilities.settings.styl",
+        "src/css/ui/_components/utilities.styl",
+        "src/css/ui/_components/visibility.settings.styl",
+        "src/css/ui/_components/visibility.styl",
+        "src/css/ui/_keywords.styl",
+        "src/css/ui/_settings.styl",
+        "src/css/ui/docs.styl",
+        "src/css/ui/gia.ui.styl"
+    ],
+    "links": {
+        "src/_elements/docs/left-menu.jade": [
+            "src/_layouts/docs.jade",
+            "src/_layouts/docs.jade"
+        ],
+        "src/_layouts/docs.jade": [
+            "src/block-grids.jade",
+            "src/breadcrumbs.jade",
+            "src/buttons.jade",
+            "src/grids.jade",
+            "src/index.jade",
+            "src/javascript-utilities.jade",
+            "src/kitchen-sink.jade",
+            "src/labels.jade",
+            "src/media-queries.jade",
+            "src/right-to-left.jade",
+            "src/top-bar.jade",
+            "src/types.jade",
+            "src/utility-classes.jade",
+            "src/visibility.jade"
+        ],
+        "src/css/ui/_components/block-grids.settings.styl.jade": [
+            "src/block-grids.jade"
+        ],
+        "src/css/ui/_components/breadcrumbs.settings.styl.jade": [
+            "src/breadcrumbs.jade"
+        ],
+        "src/css/ui/_components/buttons.settings.styl.jade": [
+            "src/buttons.jade"
+        ],
+        "src/css/ui/_components/grids.settings.styl.jade": [
+            "src/grids.jade"
+        ],
+        "src/css/ui/_components/labels.settings.styl.jade": [
+            "src/labels.jade"
+        ],
+        "src/css/ui/_components/media-queries.settings.styl.jade": [
+            "src/media-queries.jade"
+        ],
+        "src/css/ui/_components/top-bar.settings.styl.jade": [
+            "src/top-bar.jade"
+        ],
+        "src/css/ui/_components/types.settings.styl.jade": [
+            "src/types.jade"
+        ],
+        "src/css/ui/_components/utilities.settings.styl.jade": [
+            "src/utility-classes.jade"
+        ],
+        "src/css/ui/_components/visibility.settings.styl.jade": [
+            "src/visibility.jade"
+        ],
+        "src/css/ui/_components/bases.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/functions.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/media-queries.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/visibility.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/types.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/grids.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/block-grids.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/labels.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/buttons.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/dropdowns.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/breadcrumbs.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/top-bar.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/off-screen-menus.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/content-slider.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/css/ui/_components/utilities.settings.styl": [
+            "src/css/ui/_settings.styl"
+        ],
+        "src/bower/foundation/css/normalize.min.css.styl": [
+            "src/css/ui/docs.styl"
+        ],
+        "src/bower/rainbow/themes/blackboard.css.styl": [
+            "src/css/ui/docs.styl"
+        ],
+        "src/bower/fontawesome/css/font-awesome.min.css.styl": [
+            "src/css/ui/docs.styl"
+        ],
+        "src/css/ui/gia.ui.styl": [
+            "src/css/ui/docs.styl"
+        ],
+        "src/css/ui/nib.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_keywords.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_settings.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/bases.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/visibility.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/grids.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/block-grids.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/types.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/labels.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/buttons.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/top-bar.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/off-screen-menus.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/content-slider.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/dropdowns.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/breadcrumbs.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/utilities.styl": [
+            "src/css/ui/gia.ui.styl"
+        ],
+        "src/css/ui/_components/helpers.styl": [
+            "src/css/ui/gia.ui.styl"
+        ]
+    }
+}

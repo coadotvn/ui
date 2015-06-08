@@ -1,0 +1,169 @@
+block variables
+  - title = 'Buttons'
+extends _layouts/docs
+
+block body
+  
+  h1 Buttons
+  h3.sh.mb-20 Buttons are convenient tools when you need more traditional actions. To that end, gia.ui has many easy to use button styles that you can customize or override to fit your needs.
+  a.bt(href="#") Default Button
+  hr
+
+  h2 Basic
+  p You can create a button using minimal markup.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html")
+          a(href="#").bt Default Button
+    .cl.md-6
+      h4 Rendered HTML
+      a(href="#").bt Default Button
+  hr
+
+  h2 Button Sizing
+  p Additional classes can be added to your component to change its size and shape.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <!-- Size Classes -->
+          <a href="#" class="bt xs">Tiny Button</a>
+          <a href="#" class="bt sm">Small Button</a>
+          <a href="#" class="bt [md]">Default Button</a>
+          <a href="#" class="bt lg">Large Button</a>
+          <a href="#" class="bt ex">Expanded Button</a>
+          <!-- Radius Classes -->
+          <a href="#" class="bt ra">Radius Button</a>
+          <a href="#" class="bt rd">Round Button</a>
+    .cl.md-6
+      h4 Rendered HTML
+      .rw
+        .cl.sm-6
+          a(href="#").bt.xs Tiny Button
+        .cl.sm-6
+          a(href="#").bt.sm Small Button
+      .rw
+        .cl.sm-6
+          a(href="#").bt Default Button
+        .cl.sm-6
+          a(href="#").bt.lg Large Button
+      .rw
+        .cl
+          a(href="#").bt.ex Expanded Button
+      .rw
+        .cl.sm-6
+          a(href="#").bt.ra Radius Button
+        .cl.sm-6
+          a(href="#").bt.rd Round Button
+  hr
+
+  h2 Button Colors
+  p Additional classes can be added to your component to change its color.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <!-- Color Classes -->
+          <a href="#" class="bt [alt]">Default Button</a>
+          <a href="#" class="bt a">Active Button</a>
+          <a href="#" class="bt i">Info Button</a>
+          <a href="#" class="bt s">Success Button</a>
+          <a href="#" class="bt w">Warning Button</a>
+          <a href="#" class="bt [d e]">Danger Button</a>
+          <a href="#" class="bt dis">Disabled Button</a>
+    .cl.md-6
+      h4 Rendered HTML
+      .rw
+        .cl.sm-6
+          a(href="#").bt Default Button
+        .cl.sm-6
+          a(href="#").bt.a Active Button
+      .rw
+        .cl.sm-6
+          a(href="#").bt.i Info Button
+        .cl.sm-6
+          a(href="#").bt.s Success Button
+      .rw
+        .cl.sm-6
+          a(href="#").bt.w Warning Button
+        .cl.sm-6
+          a(href="#").bt.d Danger Button
+      .rw
+        .cl.sm-6
+          a(href="#").bt.dis Disabled Button
+  hr
+
+  h2 Accessibility
+  p 
+    | Use the snippet below to make buttons more accessible. If there is no
+    span.class #{'<a href="">'}
+    | then simply add the
+    span.class tabindex="0"
+    | to the
+    span.class div
+    | or 
+    span.class span
+    | to make it focusable.
+  hr
+
+  h2 Customize with Stylus
+  p Labels can be easily customized using our Stylus variables.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/buttons.settings.styl
+  hr
+
+  h2 Semantic Markup with Stylus
+  p You can create your own buttons using our Stylus mixins.
+  h3 Basic
+  p You can use the
+    span.class create-button()
+    | mixin like so:
+  h4 Stylus
+  pre
+    code(data-language="stylus").
+      .custom-button-class
+        // Using the default styles
+        create-button()
+  h4 HTML
+  pre
+    code(data-language="html").
+      <a href="#" class="custom-button-class">...</a>
+  h3 Advanced
+  p You can further customize your buttons:
+  pre
+    code(data-language="stylus").
+      .custom-button-class
+        // Using the available options with default values as shown below.
+        create-button(
+          padding = button-medium-padding-vertical button-medium-padding-horizontal,
+          background-color = active-color,
+          background-hover-color = darken(background-color, button-function-factor),
+          border-radius = button-default-radius,
+          expanded = false,
+          disabled = false,
+          font-size = button-medium-font-size,
+          font-weight = button-medium-font-weight,
+          font-family = button-font-family,
+          margin-bottom = button-margin-bottom,
+          transition = button-transition,
+          transition-duration = button-transition-duration,
+          transition-easing = button-transition-easing
+        )
+  h4 HTML
+  pre
+    code(data-language="html").
+      <a href="#" class="custom-button-class">...</a>
+  hr
+
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/buttons'

@@ -1,0 +1,80 @@
+block variables
+  - title = 'Media Queries'
+extends _layouts/docs
+
+block body
+
+  h1 Media Queries
+  h3 We keep media queries fairly simple in Foundation and let the percentage-based grid do the heavy lifting across various screen sizes.
+  hr
+
+  h2 Basic
+  p Media queries are built using ems in gia.ui.
+  h4 CSS
+  pre
+    code(data-language="css").
+      /* Define mobile styles */
+      @media only screen { }
+
+      /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+      @media only screen and (max-width: 40em) { }
+
+      /* min-width 641px, medium screens */
+      @media only screen and (min-width: 40.063em) { }
+
+      /* min-width 641px and max-width 1024px, use when QAing tablet-only issues */
+      @media only screen and (min-width: 40.063em) and (max-width: 64em) { }
+
+      /* min-width 1025px, large screens */
+      @media only screen and (min-width: 64.063em) { }
+
+      /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+      @media only screen and (min-width: 64.063em) and (max-width: 90em) { }
+
+      /* min-width 1441px, xlarge screens */
+      @media only screen and (min-width: 90.063em) { }
+
+      /* min-width 1441px and max-width 1920px, use when QAing xlarge screen-only issues */
+      @media only screen and (min-width: 90.063em) and (max-width: 120em) { }
+
+      /* min-width 1921px, xxlarge screens */
+      @media only screen and (min-width: 120.063em) { }
+  hr
+
+  h2 Customize with Stylus
+  p Media queries can be easily customized by changing the variable values in
+    span.class settings/media-queries.styl
+    | .
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/media-queries.settings.styl
+  hr
+  h2 Style with Stylus
+  p Use these media queries with the variables specified above.
+  h4 Stylus
+  pre
+    code(data-language="stylus").
+      @media small
+      @media small-up
+      @media small-only
+      @media medium
+      @media medium-up
+      @media medium-only
+      @media large
+      @media large-up
+      @media large-only
+      @media xlarge
+      @media xlarge-up
+      @media xlarge-only
+      @media xxlarge
+      @media xxlarge-up
+      @media xxlarge-only
+  hr
+
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/media-queries.settings'

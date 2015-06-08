@@ -1,0 +1,78 @@
+block variables
+doctype
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0')
+    meta(name='apple-mobile-web-app-capable', content='yes')
+    meta(name='apple-mobile-web-app-status-bar-style', content='black')
+    - var title = title || 'Docs'
+    title #{title} | gia.ui
+    link(rel="shortcut icon", href="images/favicon.png", type="image/png")
+    link(rel="stylesheet", href="css/ui/docs.css")
+    block css
+  body
+    .osw
+      input(type="checkbox", id="osm").osm
+      .osm.f
+        include ../_elements/docs/left-menu
+      .osc
+        section.header
+          .f
+            nav.tb
+              .ctn.sm-ph-15.md-ph-20.lg-ph-0
+                ul.t
+                  li
+                    a(href="docs.html")
+                      h2.b gia.ui
+                section.c
+                  ul.r
+                    li
+                      a(href="") Learn
+                    li
+                      a(href="") Develop
+                    li
+                      a(href="") Support
+                    li
+                      a(href="") Business
+                    li
+                      a(href="docs.html") Docs
+                    li
+                      a(href="getting-started.html") Getting Started
+                //- .rw.sp-0
+                  .cl.sfso
+                    label.osm.mi(for="osm")
+                  .cl.md-3.hfso
+                    h2 gia.ui
+                  .cl.md-9.hfso
+                    ul.nav.r
+                      li
+                        a(href="") Learn
+                      li
+                        a(href="") Develop
+                      li
+                        a(href="") Support
+                      li
+                        a(href="") Business
+                      li
+                        a(href="docs.html") Docs
+                      li
+                        a(href="getting-started.html")
+                          span.lb.i Getting Started
+
+        section.content
+          .ctn.sm-ph-15.md-ph-20.lg-ph-0
+            .rw.sp-30
+              .cl.md-4.lg-3.hfso
+                include ../_elements/docs/left-menu
+              .cl.md-8.lg-9.pt-30
+                block body
+        section.footer
+    script(type="text/javascript", src="bower/jquery/dist/jquery.min.js")
+    script(type="text/javascript", src="bower/rainbow/js/rainbow.min.js")
+    script(type="text/javascript", src="bower/rainbow/js/language/generic.js")
+    script(type="text/javascript", src="bower/rainbow/js/language/html.js")
+    script(type="text/javascript", src="bower/rainbow/js/language/css.js")
+    script(type="text/javascript", src="js/rainbow.stylus.js")
+    script(type="text/javascript", src="js/ui/gia.ui.js")
+    block script

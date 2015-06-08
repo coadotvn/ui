@@ -1,0 +1,98 @@
+if include-utilities
+  
+  // Clearfix
+  .{utility-clearfix-class}
+    &:before,
+    &:after
+      content ''
+      display table
+    &:after
+      clear both
+  
+  // Hidden
+  .{utility-hidden-class}
+    display none
+
+  // Float Left
+  .{utility-left-class}
+    float left
+
+  // Float Right
+  .{utility-right-class}
+    float right
+
+  // Background Image Cover
+  .{utility-background-image-cover-class}
+    background-repeat no-repeat
+    background-position center
+    background-size cover
+    radius-classes()
+
+  // Text Aligns
+  .{utility-text-left-class}
+    text-align left
+  .{utility-text-center-class}
+    text-align center
+  .{utility-text-right-class}
+    text-align right
+  .{utility-text-justify-class}
+    text-align justify
+    
+  // Text Transform
+  .{utility-text-transform-uppercase-class}
+    text-transform uppercase
+  .{utility-text-transform-lowercase-class}
+    text-transform lowercase
+  .{utility-text-transform-capitalize-class}
+    text-transform capitalize
+  .{utility-text-transform-none-class}
+    text-transform none
+
+  // Margins & Paddings
+  create-gaps(prefix = null, important = false)
+    unless prefix is null
+      prefix += gap
+    postfix = null
+    if important
+      postfix = !important
+    for i in gap-sizes
+      .{prefix}{padding-prefix}{gap}{i}
+        padding rem-calc(i) postfix
+      .{prefix}{padding-prefix}{left-prefix}{gap}{i}
+        padding-left rem-calc(i) postfix
+      .{prefix}{padding-prefix}{right-prefix}{gap}{i}
+        padding-right rem-calc(i) postfix
+      .{prefix}{padding-prefix}{top-prefix}{gap}{i}
+        padding-top rem-calc(i) postfix
+      .{prefix}{padding-prefix}{bottom-prefix}{gap}{i}
+        padding-bottom rem-calc(i) postfix
+      .{prefix}{padding-prefix}{horizontal-prefix}{gap}{i}
+        padding-left rem-calc(i) postfix
+        padding-right @padding-left
+      .{prefix}{padding-prefix}{vertical-prefix}{gap}{i}
+        padding-top rem-calc(i) postfix
+        padding-bottom @padding-top
+      .{prefix}{margin-prefix}{gap}{i}
+        margin rem-calc(i) postfix
+      .{prefix}{margin-prefix}{left-prefix}{gap}{i}
+        margin-left rem-calc(i) postfix
+      .{prefix}{margin-prefix}{right-prefix}{gap}{i}
+        margin-right rem-calc(i) postfix
+      .{prefix}{margin-prefix}{top-prefix}{gap}{i}
+        margin-top rem-calc(i) postfix
+      .{prefix}{margin-prefix}{bottom-prefix}{gap}{i}
+        margin-bottom rem-calc(i) postfix
+      .{prefix}{margin-prefix}{horizontal-prefix}{gap}{i}
+        margin-left rem-calc(i) postfix
+        margin-right @margin-left
+      .{prefix}{margin-prefix}{vertical-prefix}{gap}{i}
+        margin-top rem-calc(i) postfix
+        margin-bottom @margin-top
+        
+  create-gaps(null, true)
+  @media small
+    create-gaps(small-prefix, true)
+  @media medium
+    create-gaps(medium-prefix, true)
+  @media large
+    create-gaps(large-prefix, true)

@@ -1,0 +1,493 @@
+block variables
+  - title = 'Grids'
+extends _layouts/docs
+
+block body
+  h1 Grids
+  h3 Create powerful multi-device layouts quickly and easily with the default 12-column, nest-able gia.ui grid. If you're familiar with grid systems, you'll feel right at home. If not, you'll learn quickly.
+  hr
+  h2 Basic
+  p Start by adding an element with a
+    span.class .rw
+    | . This will create a horizontal block to contain vertical columns. Then add divs with 
+    span.class .cl
+    | class within that row. Specify the widths of each column with the 
+    span.class xs-#
+    | , 
+    span.class sm-#
+    | , 
+    span.class md-#
+    | , 
+    span.class lg-#
+    | , and 
+    span.class xl-#
+    |  classes.
+  p
+    strong gia.ui is mobile-first
+    | . Code for small screens first, and larger devices will inherit those styles. Customize for larger screens is nesessary.
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="rw">
+        <div class="cl sm-2 lg-4">.cl.sm-2.lg-4</div>
+        <div class="cl sm-4">.cl.sm-4</div>
+        <div class="cl sm-6 lg-4">.cl.sm-6.lg-4</div>
+      </div>
+      <div class="rw">
+        <div class="cl lg-3">.cl.lg-3</div>
+        <div class="cl lg-6">.cl.lg-6</div>
+        <div class="cl lg-3">.cl.lg-3</div>
+      </div>
+      <div class="rw">
+        <div class="cl sm-6 lg-2">.cl.sm-6.lg-2</div>
+        <div class="cl sm-6 lg-8">.cl.sm-6.lg-8</div>
+        <div class="cl sm-12 lg-2">.cl.sm-12.lg-2</div>
+      </div>
+      <div class="rw">
+        <div class="cl sm-3">.cl.sm-3</div>
+        <div class="cl sm-9">.cl.sm-9</div>
+      </div>
+      <div class="rw">
+        <div class="cl lg-4">.cl.lg-4</div>
+        <div class="cl lg-8">.cl.lg-8</div>
+      </div>
+      <div class="rw">
+        <div class="cl sm-6 lg-5">.cl.sm-6.lg-5</div>
+        <div class="cl sm-6 lg-7">.cl.sm-6.lg-7</div>
+      </div>
+      <div class="rw">
+        <div class="cl lg-6">.cl.lg-6</div>
+        <div class="cl lg-6">.cl.lg-6</div>
+      </div>
+  h4 Rendered HTML
+  .helper
+    .rw.sp-0
+      .cl.sm-2.lg-4
+        .sfso sm-2
+        .sfmo md-2
+        .sflo lg-4
+      .cl.sm-4
+        .sfso sm-4
+        .sfmo md-4
+        .sflo lg-4
+      .cl.sm-6.lg-4
+        .sfso sm-6
+        .sfmo md-6
+        .sflo lg-4
+    .rw.sp-0
+      .cl.lg-3
+        .sfso sm-12
+        .sfmo md-12
+        .sflo lg-3
+      .cl.lg-6
+        .sfso sm-12
+        .sfmo md-12
+        .sflo lg-6
+      .cl.lg-3
+        .sfso sm-12
+        .sfmo md-12
+        .sflo lg-3
+    .rw.sp-0
+      .cl.sm-6.lg-2
+        .sfso sm-6
+        .sfmo md-6
+        .sflo lg-2
+      .cl.sm-6.lg-8
+        .sfso sm-6
+        .sfmo md-6
+        .sflo lg-8
+      .cl.sm-12.lg-2
+        .sfso sm-12
+        .sfmo md-12
+        .sflo lg-2
+    .rw.sp-0
+      .cl.sm-3
+        .sfso sm-3
+        .sfmo md-3
+        .sflo lg-3
+      .cl.sm-9
+        .sfso sm-9
+        .sfmo md-9
+        .sflo lg-9
+    .rw.sp-0
+      .cl.lg-4
+        .sfso sm-12
+        .sfmo md-12
+        .sflo lg-4
+      .cl.lg-8
+        .sfso sm-12
+        .sfmo md-12
+        .sflo lg-8
+    .rw.sp-0
+      .cl.sm-6.lg-5
+        .sfso sm-6
+        .sfmo md-6
+        .sflo lg-5
+      .cl.sm-6.lg-7
+        .sfso sm-6
+        .sfmo md-6
+        .sflo lg-7
+    .rw.sp-0
+      .cl.lg-6
+        .sfso sm-12
+        .sfmo md-12
+        .sflo lg-6
+      .cl.lg-6
+        .sfso sm-12
+        .sfmo md-12
+        .sflo lg-6
+  hr
+  h2 Small Grids
+  p Small grids expand to large screens easier than large grids cram into small screens.
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="rw">
+        <div class="cl sm-2">2</div>
+        <div class="cl sm-10">10</div>
+      </div>
+      <div class="rw">
+        <div class="cl sm-3">9</div>
+        <div class="cl sm-9">9</div>
+      </div>
+  h4 Rendered HTML
+  .helper
+    .rw.sp-0
+      .cl.sm-2
+        div 2
+      .cl.sm-10
+        div 10
+    .rw.sp-0
+      .cl.sm-3
+        div 3
+      .cl.sm-9
+        div 9
+  hr
+  h2 Medium Grids
+  p Medium sized screens will inherit styles from small, unless you specify a different layout, using the medium grid classes.
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="rw">
+        <div class="cl md-2">2</div>
+        <div class="cl md-10">10</div>
+      </div>
+      <div class="rw">
+        <div class="cl md-3">9</div>
+        <div class="cl md-9">9</div>
+      </div>
+  h4 Rendered HTML
+  .helper
+    .rw.sp-0
+      .cl.md-2
+        div 2
+      .cl.md-10
+        div 10
+    .rw.sp-0
+      .cl.md-3
+        div 3
+      .cl.md-9
+        div 9
+  hr
+  h2 Advanced
+  p You can nest the grids indefinitely, though at a certain point it will get absurd.
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="rw">
+        <div class="cl sm-8">8
+          <div class="rw">
+            <div class="cl sm-8">8 Nested
+              <div class="rw">
+                <div class="cl sm-8">8 Nested Again</div>
+                <div class="cl sm-4">4</div>
+              </div>
+            </div>
+            <div class="cl sm-4">4</div>
+          </div>
+        </div>
+        <div class="cl sm-4">4</div>
+      </div>
+  h4 Rendered HTML
+  .helper
+    .rw.sp-0
+      .cl.sm-8
+        div 8
+        .rw.sp-0
+          .cl.sm-8
+            div 8 Nested
+            .rw.sp-0
+              .cl.sm-8
+                div 8 Nested Again
+              .cl.sm-4
+                div 4
+          .cl.sm-4
+            div 4
+      .cl.sm-4
+        div 4
+  hr
+  h2 Spaces
+  p The
+    span.class sp-0 
+    | class lets you remove column gutters (padding).
+  p There are times when you won't want each media query to be collapsed or uncollapsed. In this case, use the media query size you want and collapse or uncollapse and add that to your row element. Example shows no gutter at small media size and then adds the gutter to columns at medium.
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="rw sp-20">
+        <div class="cl sm-6 md-4 lg-3">.cl.sm-6.md-4.lg-3</div>
+        <div class="cl sm-6 md-8 lg-9">.cl.sm-6.md-8.lg-9</div>
+      </div>
+  h4 Rendered HTML
+  .rw
+    .cl.sm-2.md-1
+      span.lb.cls.mb-5 0
+    .cl.sm-10.md-11.helper
+      .rw.mb-10.sp-0
+        .cl.sm-4
+          div .cl.sm-4
+        .cl.sm-4
+          div .cl.sm-4
+        .cl.sm-4
+          div .cl.sm-4
+  .rw
+    .cl.sm-2.md-1
+      span.lb.cls.mb-5 10
+    .cl.sm-10.md-11.helper
+      .rw.mb-10.sp-10
+        .cl.sm-2
+          div .cl.sm-2
+        .cl.sm-4
+          div .cl.sm-4
+        .cl.sm-6
+          div .cl.sm-6
+  .rw
+    .cl.sm-2.md-1
+      span.lb.cls.mb-5 20
+    .cl.sm-10.md-11.helper
+      .rw.mb-10.sp-20
+        .cl.sm-8
+          div .cl.sm-8
+        .cl.sm-4
+          div .cl.sm-4
+  .rw
+    .cl.sm-2.md-1
+      span.lb.cls.mb-5 25
+    .cl.sm-10.md-11.helper
+      .rw.mb-10.sp-25
+        .cl.sm-3
+          div .cl.sm-3
+        .cl.sm-3
+          div .cl.sm-3
+        .cl.sm-3
+          div .cl.sm-3
+        .cl.sm-3
+          div .cl.sm-3
+  hr
+  h2 Offsets
+  p Move blocks up to 11 columns to the right by using classes like
+    span.class lg-os-#
+    | and 
+    span.class sm-os-#
+    | .
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="rw sp-0">
+        <div class="cl lg-1">1</div>
+        <div class="cl lg-7">7</div>
+        <div class="cl lg-4">4</div>
+      </div>
+      <div class="rw">
+        <div class="cl lg-1">1</div>
+        <div class="cl lg-6 os-1">6</div>
+        <div class="cl lg-4">4</div>
+      </div>
+      <div class="rw">
+        <div class="cl lg-1">1</div>
+        <div class="cl lg-5 os-2">5</div>
+        <div class="cl lg-4">4</div>
+      </div>
+      <div class="rw">
+        <div class="cl lg-1">1</div>
+        <div class="cl lg-4 os-3">4</div>
+        <div class="cl lg-4">4</div>
+      </div>
+  h4 Rendered HTML
+  .helper
+    .rw.sp-0
+      .cl.md-1
+        div 1
+      .cl.md-7
+        div 7
+      .cl.md-4
+        div 4
+    .rw.sp-0
+      .cl.md-1
+        div 1
+      .cl.md-6.os-1
+        div 6
+      .cl.md-4
+        div 4
+    .rw.sp-0
+      .cl.md-1
+        div 1
+      .cl.md-5.os-2
+        div 5
+      .cl.md-4
+        div 4
+    .rw.sp-0
+      .cl.md-1
+        div 1
+      .cl.md-4.os-3
+        div 4
+      .cl.md-4
+        div 4
+  hr
+  h2 Incomplete Rows
+  p In order to work around browsers' different rounding behaviors, gia.ui will float the last column in a row to the right so the edge aligns. If your row doesn't have a count that adds up to 12 columns, you can tag the last column with a class of
+    span.class end
+    | in order to override that behavior.
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="rw">
+        <div class="cl sm-3">3</div>
+        <div class="cl sm-3">3</div>
+        <div class="cl sm-3">3</div>
+      </div>
+      <div class="rw">
+        <div class="cl sm-3">3</div>
+        <div class="cl sm-3">3</div>
+        <div class="cl sm-3 end">3 end</div>
+      </div>
+  h4 Rendered HTML
+  .helper
+    .rw.sp-0
+      .cl.sm-3
+        div 3
+      .cl.sm-3
+        div 3
+      .cl.sm-3
+        div 3
+    .rw.sp-0
+      .cl.sm-3
+        div 3
+      .cl.sm-3
+        div 3
+      .cl.sm-3.end
+        div 3 end
+  hr
+  h2 Centered Columns
+  p Center your columns by adding a class of
+    span.class sm-ct
+    | to your column. Large will inherit small centering by default, but you can also center solely on large by applying a
+    span.class lg-ct class
+    | . To uncenter on large screens use
+    span.class lg-uct
+    | .
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="rw">
+        <div class="cl sm-9 sm-ct">Small Centered Column</div>
+      </div>
+      <div class="rw">
+        <div class="cl md-11 md-ct lg-uct">Medium Centered Only</div>
+      </div>
+  h4 Rendered HTML
+  .helper
+    .rw
+      .cl.sm-9.sm-ct
+        div Small Centered Column
+    .rw
+      .cl.md-11.md-ct.lg-uct
+        div Medium Centered Only
+  hr
+  h2 Source Ordering
+  p Using these source ordering classes, you can shift columns around between our breakpoints. This means if you place sub-navigation below main content on small displays, you have the option to position the sub-navigation on either the left or right of the page for large displays. Prefix push/pull with the size of the device you want to apply the styles to.
+    span.class md-push-#
+    | ,
+    span.class lg-push-#
+    | is the syntax you'll use. Use
+    span.class lg-ro
+    | to reset pushed or pulled columns to their original position on large screens.
+  h4 HTML
+  pre
+    code(data-language="html") TODO
+  h4 Rendered HTML
+  hr
+  h2 Customize with Stylus
+  p Customizing the grid is easy with the Stylus variables provided in the
+    span.class settings/grids.styl
+    | file.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/grids.settings.styl
+  .customize.h
+    h3 Basic
+    p You can use the
+      span.class grid-row()
+      | and
+      span.class grid-column()
+      | mixins to create your own rows and columns with semantic markup, like so:
+    .rw
+      .cl.md-6
+        h4 Stylus
+        pre
+          code(data-language="stylus").
+            .custom-row-class
+              create-grid-row()
+              .custom-column-class
+                create-grid-columns(12)
+      .cl.md-6
+        h4 HTML
+        pre
+          code(data-language="html").
+            <div class="custom-row-class">
+              <div class="custom-column-class">
+                <!-- Your Content Goes Here -->
+              </div>
+            </div>
+    h3 Advanced
+    p You can further customize your grid columns using the provided options in the
+      span.class create-grid-columns()
+      | mixins:
+    h4 Row Mixin Options
+    h4 Stylus
+    pre
+      code(data-language="stylus").
+        .custom-row-class
+          create-grid-row(space = default-gutter)
+          // Default space value is default-gutter = 20px
+    h4 Columns Mixin Options
+    h4 Stylus
+    pre
+      code(data-language="stylus").
+        .custom-column-class
+          create-grid-columns(
+            // Control the number of columns
+            columns: total-columns,
+            // Specify whether or not this is the last column in the row
+            last-column: false,
+            // Choose whether or not to center this column
+            center: false,
+            // Choose the numver of columns to offset this element by
+            offset: 0,
+            // Specify how many columns to push this element past
+            push: 0,
+            // Specify how many columns to pull this element past
+            pull: 0,
+            // Set the gutter of this column
+            space: default-gutter,
+            // Specify the float direction
+            float: default-float
+          )
+  hr
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/grids'

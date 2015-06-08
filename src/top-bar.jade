@@ -1,0 +1,103 @@
+block variables
+  - title = 'Top Bar'
+extends _layouts/docs
+
+block body
+
+  h1 Top Bar
+  h3.sh.mb-20 The gia.ui Top Bar gives you a great way to display a complex navigation bar on small, medium or large screens.
+  hr
+
+  h2 Build with HTML classes
+  p The top bar is a pretty complex piece of magical UI goodness. We rely on many presentational classes to define its look and feel. The top bar is hoverable by default, it will close itself on click by default.
+  nav.tb.da(role="navigation")
+    ul.t
+      li
+        a(href="#")
+          h2.b gia.ui
+    section.c
+      ul.l
+        li
+          a(href="#") Home
+        li
+          a(href="#") Docs
+      ul.r
+        li
+          a(href="#") About
+        li
+          a(href="#") Getting Started
+  h4 HTML
+  pre
+    code(data-language="html").
+      <nav class="tb" role="navigation">
+        <ul class="t">
+          <li><a href="#"><h2 class="b">gia.ui</h2></a></li>
+        </ul>
+        <section class="c">
+          <ul class="l">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Docs</a></li>
+          </ul>
+          <ul class="r">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Getting Started</a></li>
+          </ul>
+        </section>
+      </nav>
+  hr
+
+  h2 Positioning the Bar
+  p The top bar is build with a single
+    span.class nav
+    | element with a class of
+    span.class .tb
+    |. It will take on full-browser width by default. To make the top bar stay fixed as you scroll, wrap it in a
+    span.class div
+    | with class fixed
+    span.class .f
+    |. If you want your navigation to be set to your grid width, wrap it in a
+    span.class div
+    | with class in-grid
+    span.class .ig
+    | . You can use
+    span.class .f
+    | and
+    span.class .ig
+    | together in the wrapping div (
+    span.class div class="f ig"
+    | )
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <div class="f">
+            <nav class="tb" role="navigation">
+              ...
+            </nav>
+          </div>
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <div class="ig">
+            <nav class="tb" role="navigation">
+              ...
+            </nav>
+          </div>
+  hr
+
+  h2 Customize with Stylus
+  p Breadcrumbs can be easily customized using our Stylus variables.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/top-bar.settings.styl
+  hr
+
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/top-bar'

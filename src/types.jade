@@ -1,0 +1,324 @@
+block variables
+  - title = 'Typography'
+extends _layouts/docs
+
+block body
+  h1 Typography
+  h3.sh Typography in gia.ui is meant to make your life easier by providing clean, attractive, simple default styles for all of the most basic typographical elements.
+  hr
+  h2 Headers
+  p gia.ui includes styles for all of the header elements that are balanced and based on a modular scale (though modular-scale is not a dependency of gia.ui).
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <h1>h1. This is a very large header.</h1>
+          <h2>h2. This is a large header.</h2>
+          <h3>h3. This is a medium header.</h3>
+          <h4>h4. This is a moderate header.</h4>
+          <h5>h5. This is a small header.</h5>
+          <h6>h6. This is a tiny header.</h6>
+    .cl.md-6
+      h4 Rendered HTML
+      h1 h1. This is a very large header.
+      h2 h2. This is a large header.
+      h3 h3. This is a medium header.
+      h4 h4. This is a moderate header.
+      h5 h5. This is a small header.
+      h6 h6. This is a tiny header.
+  hr
+  h2 Subheaders
+  p 
+    | Lighten up your headers by adding a class of 
+    span.class .sh 
+    | to any header element.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <h1 class="sh">h1. subheader</h1>
+          <h2 class="sh">h2. subheader</h2>
+          <h3 class="sh">h3. subheader</h3>
+          <h4 class="sh">h4. subheader</h4>
+          <h5 class="sh">h5. subheader</h5>
+          <h6 class="sh">h6. subheader</h6>
+    .cl.md-6
+      h4 Rendered HTML
+      h1.sh h1. subheader
+      h2.sh h2. subheader
+      h3.sh h3. subheader
+      h4.sh h4. subheader
+      h5.sh h5. subheader
+      h6.sh h6. subheader
+  hr
+  h2 Small Header Segments
+  p 
+    | By inserting a
+    span.lb.cls.ra.mh-5 small
+    | element into a header Foundation will scale the header font size down for an inline element, allowing you to use this for subtitles or other secondary header text.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <h1>h1. <small>Small segment header.</small></h1>
+          <h2>h2. <small>Small segment header.</small></h2>
+          <h3>h3. <small>Small segment header.</small></h3>
+          <h4>h4. <small>Small segment header.</small></h4>
+          <h5>h5. <small>Small segment header.</small></h5>
+          <h6>h6. <small>Small segment header.</small></h6>
+    .cl.md-6
+      h4 Rendered HTML
+      h1
+        | h1. 
+        small Small segment header.
+      h2
+        | h2. 
+        small Small segment header.
+      h3
+        | h3. 
+        small Small segment header.
+      h4
+        | h4. 
+        small Small segment header.
+      h5
+        | h5. 
+        small Small segment header.
+      h6
+        | h6. 
+        small Small segment header.
+  hr
+  h2 Paragraphs
+  p 
+    | This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap 
+    span.class strong
+    | around type to 
+    strong make it bold! 
+    | . You can also use
+    span.class em
+    | to 
+    em italicize your words
+    | .
+  h4 HTML
+  pre.ww
+    code(data-language="html").
+      <p>This is a paragraph. Paragraphs are preset with a font size, line height and spacing to match the overall vertical rhythm. To show what a paragraph looks like this needs a little more content so, did you know that there are storms occurring on Jupiter that are larger than the Earth? Pretty cool. Wrap strong around type to <strong>make it bold!</strong>. You can also use em to <em>italicize your words</em>.</p>
+  hr
+  .pn.tc
+    | Need to align text? We made some slick 
+    a(href="utilities.html") utility classes 
+    | to help you out.
+  h2 Links
+  p
+    | Links are very standard, and the 
+    a(href="stylus.html") color is preset to the active color.
+  h4 HTML
+  pre.ww
+    code(data-language="html").
+      <p>Links are very standard, and the <a href="stylus.html">color is preset to the active color.</a></p>
+  hr
+  h2 Lists
+  p Lists are helpful for, well, lists of things. Didn't see that coming did you! There are baked-in styles for a number of different unordered list styles, as well as ordered and definition lists.
+  h3 Disc List
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="d">
+            <li>The ul tag defines an unordered (bulleted) list.</li>
+            <li>Use the ul tag together with the li tag to create unordered lists.</li>
+            <li>
+              List Item
+              <ul>
+                <li>Tip: Use CSS to style lists.</li>
+                <li>Tip: To create ordered lists, use the ol tag.</li>
+                <li>The ul tag also supports the Global Attributes in HTML.</li>
+              </ul>
+            </li>
+            <li>The ul tag also supports the Event Attributes in HTML.</li>
+          </ul>
+    .cl.md-6
+      h4 Rendered HTML
+      ul.d
+        li The ul tag defines an unordered (bulleted) list.
+        li Use the ul tag together with the li tag to create unordered lists.
+        li
+          | Nested List
+          ul
+            li Tip: Use CSS to style lists.
+            li Tip: To create ordered lists, use the ol tag.
+            li The ul tag also supports the Global Attributes in HTML.
+        li The ul tag also supports the Event Attributes in HTML.
+  h3 Circle List
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="c">
+            <li>The ul tag defines an unordered (bulleted) list.</li>
+            <li>Use the ul tag together with the li tag to create unordered lists.</li>
+            <li>
+              List Item
+              <ul>
+                <li>Tip: Use CSS to style lists.</li>
+                <li>Tip: To create ordered lists, use the ol tag.</li>
+                <li>The ul tag also supports the Global Attributes in HTML.</li>
+              </ul>
+            </li>
+            <li>The ul tag also supports the Event Attributes in HTML.</li>
+          </ul>
+    .cl.md-6
+      h4 Rendered HTML
+      ul.c
+        li The ul tag defines an unordered (bulleted) list.
+        li Use the ul tag together with the li tag to create unordered lists.
+        li
+          | Nested List
+          ul
+            li Tip: Use CSS to style lists.
+            li Tip: To create ordered lists, use the ol tag.
+            li The ul tag also supports the Global Attributes in HTML.
+        li The ul tag also supports the Event Attributes in HTML.
+  h3 Square List
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="s">
+            <li>The ul tag defines an unordered (bulleted) list.</li>
+            <li>Use the ul tag together with the li tag to create unordered lists.</li>
+            <li>
+              List Item
+              <ul>
+                <li>Tip: Use CSS to style lists.</li>
+                <li>Tip: To create ordered lists, use the ol tag.</li>
+                <li>The ul tag also supports the Global Attributes in HTML.</li>
+              </ul>
+            </li>
+            <li>The ul tag also supports the Event Attributes in HTML.</li>
+          </ul>
+    .cl.md-6
+      h4 Rendered HTML
+      ul.s
+        li The ul tag defines an unordered (bulleted) list.
+        li Use the ul tag together with the li tag to create unordered lists.
+        li
+          | Nested List
+          ul
+            li Tip: Use CSS to style lists.
+            li Tip: To create ordered lists, use the ol tag.
+            li The ul tag also supports the Global Attributes in HTML.
+        li The ul tag also supports the Event Attributes in HTML.
+  h3 No Bullet List
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="nb">
+            <li>The ul tag defines an unordered (bulleted) list.</li>
+            <li>Use the ul tag together with the li tag to create unordered lists.</li>
+            <li>
+              List Item
+              <ul>
+                <li>Tip: Use CSS to style lists.</li>
+                <li>Tip: To create ordered lists, use the ol tag.</li>
+                <li>The ul tag also supports the Global Attributes in HTML.</li>
+              </ul>
+            </li>
+            <li>The ul tag also supports the Event Attributes in HTML.</li>
+          </ul>
+    .cl.md-6
+      h4 Rendered HTML
+      ul.nb
+        li The ul tag defines an unordered (bulleted) list.
+        li Use the ul tag together with the li tag to create unordered lists.
+        li
+          | Nested List
+          ul
+            li Tip: Use CSS to style lists.
+            li Tip: To create ordered lists, use the ol tag.
+            li The ul tag also supports the Global Attributes in HTML.
+        li The ul tag also supports the Event Attributes in HTML.
+  h3 Ordered List
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ol>
+            <li>The ul tag defines an unordered (bulleted) list.</li>
+            <li>Use the ul tag together with the li tag to create unordered lists.</li>
+            <li>
+              List Item
+              <ol>
+                <li>Tip: Use CSS to style lists.</li>
+                <li>Tip: To create ordered lists, use the ol tag.</li>
+                <li>The ul tag also supports the Global Attributes in HTML.</li>
+              </ol>
+            </li>
+            <li>The ul tag also supports the Event Attributes in HTML.</li>
+          </ol>
+    .cl.md-6
+      h4 Rendered HTML
+      ol
+        li The ul tag defines an unordered (bulleted) list.
+        li Use the ul tag together with the li tag to create unordered lists.
+        li
+          | Nested List
+          ol
+            li Tip: Use CSS to style lists.
+            li Tip: To create ordered lists, use the ol tag.
+            li The ul tag also supports the Global Attributes in HTML.
+        li The ul tag also supports the Event Attributes in HTML.
+  h3 Difinition List
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <dl>
+            <dt>Difinition List</dt>
+            <dd>A description list, with terms and descriptions.</dd>
+          </dl>
+    .cl.md-6
+      h4 Rendered HTML
+      dl
+        dt Difinition List
+        dd A description list, with terms and descriptions.
+  hr
+  h2 Blockquotes
+  p Sometimes other people say smart things, and you may want to mention that through a blockquote callout. We've got you covered.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <blockquote>
+            People like talking about people. Makes us feel superior. Makes us feel in control. And sometimes, for some people, knowing some things makes them care.
+            <cite>Gregory House - House M.D #113</cite>
+          </blockquote>
+    .cl.md-6
+      h4 Rendered HTML
+      blockquote
+        | People like talking about people. Makes us feel superior. Makes us feel in control. And sometimes, for some people, knowing some things makes them care.
+        cite Gregory House - House M.D #113
+  hr
+  h2 Available Stylus Variables
+  p We've got a ton of variables for you to use to customize your typography.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/types.settings.styl
+  hr
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/types'

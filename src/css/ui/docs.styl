@@ -1,0 +1,49 @@
+@import '../../bower/foundation/css/normalize.min.css'
+@import '../../bower/rainbow/themes/blackboard.css'
+@import '../../bower/fontawesome/css/font-awesome.min.css'
+
+@import 'gia.ui'
+
+code
+	display none
+
+*:not(code)
+	> span.class
+		margin-left rem-calc(5)
+		margin-right @margin-left
+		create-label()
+		
+span.done
+	margin-left rem-calc(10)
+	create-label(
+		background-color: success-color,
+		border-radius: round
+	)
+		
+span.doing
+	margin-left rem-calc(10)
+	create-label(
+		background-color: info-color,
+		border-radius: round
+	)
+		
+span.later
+	margin-left rem-calc(10)
+	create-label(
+		background-color: danger-color,
+		border-radius: round
+	)
+		
+span.incomplete
+	margin-left rem-calc(10)
+	create-label(
+		background-color: warning-color,
+		border-radius: round
+	)
+		
+span.unimproved
+	margin-left rem-calc(10)
+	create-label(
+		background-color: danger-color,
+		border-radius: round
+	)

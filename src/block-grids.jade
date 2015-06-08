@@ -1,0 +1,160 @@
+block variables
+  - title = 'Block Grids'
+extends _layouts/docs
+
+block body
+
+  h1 Block Grids
+  h3 Block grids give you a way to evenly split contents of a list within the grid. If you wanted to create a row of five images or paragraphs that need to stay evenly spaced no matter the screen size, the block grid is for you.
+  hr
+
+  ul.bg.lg-6.md-5.sm-3
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/gerrenlamson/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/rssems/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/celikovic/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/salleedesign/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/chexee/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/littlenono/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/emieljanson/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/jkhorshidi/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/kondratevnd/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/liang/128.jpg")
+    li
+      img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/chloepark/128.jpg")
+  hr
+
+  h2 Basic
+  p Use a simple
+    span.class bg
+    span.class sm-#
+    | classes to code up the block grid and specify the number of items in a row.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="bg sm-3">
+            <li><!-- Your content goes here --></li>
+            <li><!-- Your content goes here --></li>
+            <li><!-- Your content goes here --></li>
+          </ul>
+    .cl.md-6
+      h4 Rendered HTML
+      ul.bg.sm-3
+        li
+          img.ra(src="http://ia.media-imdb.com/images/M/MV5BNzQ2ODY0MTIwMV5BMl5BanBnXkFtZTcwNDQ2NzMzMw@@._V1_SX214_CR0,0,214,317_AL_.jpg")
+        li
+          img.ra(src="http://ia.media-imdb.com/images/M/MV5BMjA3MzIzMjM5Nl5BMl5BanBnXkFtZTgwOTI5OTQzMjE@._V1_SY317_CR56,0,214,317_AL_.jpg")
+        li
+          img.ra(src="http://ia.media-imdb.com/images/M/MV5BMjAyNzAwMTg1MV5BMl5BanBnXkFtZTcwOTY5MjU3Mg@@._V1_SY317_CR15,0,214,317_AL_.jpg")
+  hr
+  
+  h2 Advanced
+  p Use additional classes to specify a different number of items in a row for each screen size.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="bg sm-4 md-2 lg-5">
+            <li><!-- Your content goes here --></li>
+            <li><!-- Your content goes here --></li>
+            <li><!-- Your content goes here --></li>
+            <li><!-- Your content goes here --></li>
+            <li><!-- Your content goes here --></li>
+            <li><!-- Your content goes here --></li>
+            <li><!-- Your content goes here --></li>
+          </ul>
+    .cl.md-6
+      h4 Rendered HTML
+        ul.bg.sm-4.md-2.lg-5.sp-10
+          li
+            img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/pixeliris/128.jpg")
+          li
+            img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/jennyshen/128.jpg")
+          li
+            img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/kaelifa/128.jpg")
+          li
+            img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/aikyrie/128.jpg")
+          li
+            img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/nckles/128.jpg")
+          li
+            img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/dianatomic/128.jpg")
+          li
+            img.ra(src="https://s3.amazonaws.com/uifaces/faces/twitter/jmsteely/128.jpg")
+  p If you use the
+    span.class sm-#
+    | only, the grid will keep its spacing and configuration no matter the screen size. If you use
+    span.class lg-#
+    | only, the list items will stack on top of each other for small devices. If you use both of those classes combined, you can control the configuration and layout separately for each breakpoint.
+  hr
+
+  h2 Customize with Stylus
+  p Customizing the block grid is easy with the Stylus variables provided in the
+    span.class settings/block-grids.styl
+    | file.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/block-grids.settings.styl
+  hr
+
+  h2 Semantic Markup with Stylus Mixins
+  p You apply block grid styles to semantic markup using Stylus mixins.
+  h3 Basic
+  p You can use the
+    span.class create-block-grid()
+    | mixin to create your own block grid, like so:
+  .rw
+    .cl.md-6
+      h4 Stylus
+      pre
+        code(data-language="stylus").
+          ul.custom-block-grid
+            create-block-grid(20px, 3)
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <ul class="custom-block-grid">
+            <li><!-- Your content goest here --></li>
+            <li><!-- Your content goest here --></li>
+            <li><!-- Your content goest here --></li>
+          </ul>
+  h3 Advanced
+  p You can further customize your block grid using the provided options in the
+    span.class create-block-grid()
+    | mixin:
+  pre
+    code(data-language="stylus").
+      .custom-block-grid
+        create-block-grid(
+          // This controls how much space is between each item in the block grid. Use a variable or any pixel or em value
+          space: block-grid-default-space,
+          // This controls how many elements will be on each row of the block grid for small device
+          small: 1,
+          // This controls how many elements will be on each row of the block grid for medium device
+          medium: 1,
+          // This controls how many elements will be on each row of the block grid for large device
+          large: 1
+        )
+  hr
+
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/block-grids'

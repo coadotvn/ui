@@ -1,0 +1,161 @@
+block variables
+  - title = 'Visibility'
+extends _layouts/docs
+
+block body
+
+  h1 Visibility Classes
+  h3 Visibility classes let you show or hide elements based on screen size or device orientation. You can use visibility classes to control which elements users see depending on their browsing environment.
+  hr
+
+  h2 Show by Screen Size
+  p In this example, we use the show visibility classes to 
+    strong show 
+    | certain strings of text based on the device on which users view a page. If their browser meets the class's conditions, the element will be shown. If not, it will be hidden.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <p class="sfso">This text is shown only on a small screen.</p>
+          <p class="sfmu">This text is shown on medium screens and up.</p>
+          <p class="sfmo">This text is shown only on a medium screen.</p>
+          <p class="sflu">This text is shown on large screens and up.</p>
+          <p class="sflo">This text is shown only on a large screen.</p>
+          <p class="sfxlu">This text is shown on xlarge screens and up.</p>
+          <p class="sfxlo">This text is shown only on an xlarge screen.</p>
+          <p class="sfxxlu">This text is shown on xxlarge screens and up.</p>
+    .cl.md-6
+      h4 Rendered HTML
+      p.mb-5.sfso This text is shown only on a small screen.
+      p.mb-5.sfmu This text is shown on medium screens and up.
+      p.mb-5.sfmo This text is shown only on a medium screen.
+      p.mb-5.sflu This text is shown on large screens and up.
+      p.mb-5.sflo This text is shown only on a large screen.
+      p.mb-5.sfxlu This text is shown on xlarge screens and up.
+      p.mb-5.sfxlo This text is shown only on an xlarge screen.
+      p.mb-5.sfxxlu This text is shown on xxlarge screens and up.
+  hr
+
+  h2 Hide by Screen Size
+  p This example shows the opposite: It uses the 
+    strong hide 
+    | visibility classes to state which elements should disappear based on your device's screen size or orientation. Users will see elements on every browser except those that meet these conditions.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <p class="hfso">You are <strong>not</strong> on a small screen.</p>
+          <p class="hfmu">You are <strong>not</strong> on a medium, large, xlarge, or xxlarge screen.</p>
+          <p class="hfmo">You are <strong>not</strong> on a medium screen.</p>
+          <p class="hflu">You are <strong>not</strong> on a large, xlarge, or xxlarge screen.</p>
+          <p class="hflo">You are <strong>not</strong> on a large screen.</p>
+          <p class="hfxlu">You are <strong>not</strong> on an xlarge screen and up.</p>
+          <p class="hfxlo">You are <strong>not</strong> on an xlarge screen.</p>
+          <p class="hfxxlu">You are <strong>not</strong> on an xxlarge screen.</p>
+    .cl.md-6
+      h4 Rendered HTML
+      p.mb-5.hfso You are 
+        strong not 
+        | on a small screen.
+      p.mb-5.hfmu You are 
+        strong not 
+        | on a medium, large, xlarge, or xxlarge screen.
+      p.mb-5.hfmo You are 
+        strong not 
+        | on a medium screen.
+      p.mb-5.hflu You are 
+        strong not 
+        | on a large, xlarge, or xxlarge screen.
+      p.mb-5.hflo You are 
+        strong not 
+        | on a large screen.
+      p.mb-5.hfxlu You are 
+        strong not 
+        | on an xlarge screen and up.
+      p.mb-5.hfxlo You are 
+        strong not 
+        | on an xlarge screen.
+      p.mb-5.hfxxlu You are 
+        strong not 
+        | on an xxlarge screen.
+  hr
+
+  h2 Orientation Detection
+  p This straightforward example shows how two strings of text determine whether or not an element is visible in different orientations. This will change on mobile devices when you rotate the device. On desktop, the orientation is almost always reported as landscape.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <p class="sfls">You are in landscape orientation.</p>
+          <p class="sfpt">You are in portrait orientation.</p>
+    .cl.md-6
+      h4 Rendered HTML
+      p.mb-5.sfls You are in landscape orientation.
+      p.mb-5.sfpt You are in portrait orientation.
+  hr
+
+  h2 Touch Detection
+  p There are also visibility classes to hide or show content based on whether a device supports touch (as determined by Modernizr).
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <p class="sft">You are on a touch-enabled device.</p>
+          <p class="hft">You are not on a touch-enabled device.</p>
+    .cl.md-6
+      h4 Rendered HTML
+      p.mb-5.sfls You are in landscape orientation.
+      p.mb-5.sfpt You are in portrait orientation.
+  hr
+
+  h2 Accessibility
+  p Finally, if you want to hide some content but still make it accessible for screen readers, use the hidden visibility classes. Do not confuse these classes with hide visibility classes. Use these classes in conjunction with the hide and show visibility classes to control complex layouts while offering accessibility for those using screen readers.
+  hr
+
+  h2 Print Styles
+  p gia.ui includes print styles developed by HTML5 Boilerplate to give you some basic print-specific styles. These are activated when you print through a media query. It includes:
+  ul.d
+    li Clearing out backgrounds, box shadows and text shadows
+    li Appending link URLs after the anchor text
+    li Bordering blockquotes and pre elements
+    li Page cleanup and window minimization
+  o On top of that, gia.ui includes a couple of simple classes you can use to control elements printing, or not printing. Simply attach
+  span.class .sfp
+  | to an element to only show when printing, and
+  span.class .hfp
+  | to hide something when printing.
+
+  h3 Available classes:
+  ul.d
+    li
+      span.class .sfp
+      | ,
+      span.class .po
+      | (Visable for printing)
+    li
+      span.class .hfp
+      | ,
+      span.class .hop
+      | (Hidden while printing)
+  hr
+
+  h2 Customize with Stylus
+  p Customizing the visibility classes is easy with the Stylus variables provided in the
+    span.class settings/visibility.styl
+    | file.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/ui/_components/visibility.settings.styl
+  hr
+
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/visibility'
