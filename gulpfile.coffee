@@ -1,5 +1,6 @@
 gulp = require 'gulp'
 gutil  = require 'gulp-util'
+ghPages = require 'gulp-gh-pages'
 rimraf = require 'rimraf'
 minimist = require 'minimist'
 nib = require 'nib'
@@ -32,9 +33,9 @@ paths =
 		dest: basePaths.dest
 		jade: [
 			"#{basePaths.src}/**/*.jade"
-			# "!#{basePaths.src}/**/_**/**"
-			# "!#{basePaths.src}/**/_*"
-			# "!#{basePaths.bower}/**"
+			"!#{basePaths.src}/**/_**/**"
+			"!#{basePaths.src}/**/_*"
+			"!#{basePaths.bower}/**"
 		]
 
 	js:
@@ -95,18 +96,13 @@ onError = (e) ->
 onChange = (e) ->
 	gutil.log 'file', gutil.colors.cyan(e.path.replace(new RegExp('/.*(?=/' + basePaths.src + ')/'), '')), 'was', gutil.colors.magenta(e.type)
 
-gulp.task 'jade', ['linked'], () ->
+gulp.task 'jade', [], () ->
 	gulp.src paths.html.jade
-		.pipe plugins.changed(paths.html.dest, extension: '.html')
-		.pipe plugins.tap((file, t) ->
-				fileName = file.path.replace "#{__dirname}/", ''
-				console.log fileName
-				if db.links[fileName]? then console.log db.links[fileName]
-			)
-		# .pipe plugins.jade(configs.jade).on('error', onError)
-		# .pipe plugins.size(configs.size)
-		# .pipe plugins.connect.reload()
-		# .pipe gulp.dest(paths.html.dest)
+		# .pipe plugins.changed(paths.html.dest, extension: '.html')
+		.pipe plugins.jade(configs.jade).on('error', onError)
+		.pipe plugins.size(configs.size)
+		.pipe plugins.connect.reload()
+		.pipe gulp.dest(paths.html.dest)
 
 gulp.task 'coffee', [], () ->
 	gulp.src paths.js.coffee
@@ -154,10 +150,9 @@ gulp.task 'watch', [], () ->
 	# gulp.watch configs.clone.src, ['clone']
 	#	.on 'change', onChange
 
-gulp.task 'linked', () ->
-	data = fs.readFileSync '_linked.json', 'utf8'
-	data = JSON.parse data
-	db = data
+gulp.task 'deploy', [], () ->
+	gulp.src "#{basePaths.dest}/**/*"
+		.pipe ghPages()
 
 gulp.task 'default', () ->
 	gutil.log gutil.colors.cyan('gulp build') + ' to rebuild all files.'

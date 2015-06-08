@@ -19,6 +19,7 @@
   "dependencies": {
     "glob": "^5.0.10",
     "gulp-changed": "^1.2.1",
+    "gulp-gh-pages": "^0.5.2",
     "gulp-tap": "^0.1.3",
     "gulp-through": "^0.3.0",
     "rimraf": "^2.3.4",
