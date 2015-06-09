@@ -1,15 +1,8 @@
 gulp = require 'gulp'
 gutil  = require 'gulp-util'
-ghPages = require 'gulp-gh-pages'
 rimraf = require 'rimraf'
 minimist = require 'minimist'
 nib = require 'nib'
-
-
-fs = require 'fs'
-path = require 'path'
-db = {}
-
 
 plugins = require('gulp-load-plugins')({
 		pattern: ['gulp-*', 'gulp.*']
@@ -98,7 +91,6 @@ onChange = (e) ->
 
 gulp.task 'jade', [], () ->
 	gulp.src paths.html.jade
-		# .pipe plugins.changed(paths.html.dest, extension: '.html')
 		.pipe plugins.jade(configs.jade).on('error', onError)
 		.pipe plugins.size(configs.size)
 		.pipe plugins.connect.reload()
@@ -124,6 +116,7 @@ gulp.task 'css', ['stylus']
 
 gulp.task 'clone', () ->
 	gulp.src configs.clone.src
+		.pipe plugins.changed(paths.html.dest)
 		.pipe plugins.size(configs.size)
 		.pipe gulp.dest(basePaths.dest)
 		.on 'error', (e) ->
@@ -147,12 +140,8 @@ gulp.task 'watch', [], () ->
 		.on 'change', onChange
 	gulp.watch paths.css.stylus, ['css']
 		.on 'change', onChange
-	# gulp.watch configs.clone.src, ['clone']
-	#	.on 'change', onChange
-
-gulp.task 'deploy', [], () ->
-	gulp.src "#{basePaths.dest}/**/*"
-		.pipe ghPages()
+	gulp.watch configs.clone.src, ['clone']
+		.on 'change', onChange
 
 gulp.task 'default', () ->
 	gutil.log gutil.colors.cyan('gulp build') + ' to rebuild all files.'
