@@ -1,3 +1,4 @@
+
 if typeof FastClick is 'function'
 	FastClick.attach document.body
 
