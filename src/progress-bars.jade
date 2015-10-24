@@ -1,0 +1,140 @@
+block variables
+  - component = 'progress-bars'
+  - title = 'Progress Bars'
+  - description = 'A simple way to add progress bars to your layouts. You only need two HTML elements to make them and they\'re easy to customize.'
+
+extends _layouts/docs
+
+block body
+
+  h1= title
+  h3= description
+  br
+  .pb
+    span.mt(style="width: 25%")
+  .pb.i.ra
+    span.mt(style="width: 50%")
+  .pb.rd
+    span.mt.s(style="width: 10%")
+    span.mt.i(style="width: 15%")
+    span.mt.w(style="width: 20%")
+    span.mt.d(style="width: 25%")
+  hr
+
+  h2 Basic
+  p You can create a progress bar using minimal markup.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <div class="pb">
+            <span class="mt"></span>
+          </div>
+    .cl.md-6
+      h4 Rendered HTML
+      p Progress bar base with meter at 0%:
+      .pb
+        span.mt
+  hr
+
+  h2 Advanced
+  p Additional classes can be added to your progress bar to change its appearance.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <div class="pb [xs sm md lg xl xxl] [alt a i s w e d] [ra rd]">
+            <span class="mt" style="width: [1 - 100]%"></span>
+          </div>
+    .cl.md-6
+      h4 Rendered HTML
+      p Medium warning progress bar with small corner border radius:
+      .pb.md.ra.w
+        span.mt(style="width: 75%")
+  hr
+
+  h2 Stacked
+  p Progress bars can be stacked.
+  .rw
+    .cl.md-6
+      h4 HTML
+      pre
+        code(data-language="html").
+          <div class="pb [xs sm md lg xl xxl] [ra rd]">
+            <span class="mt [alt s a i s w e d]" style="width: [1 - 100]%"></span>
+            <span class="mt [alt s a i s w e d]" style="width: [1 - 100]%"></span>
+            <span class="mt [alt s a i s w e d]" style="width: [1 - 100]%"></span>
+          </div>
+    .cl.md-6
+      h4 Rendered HTML
+      p Multi stacked meters, in small rounded style:
+      .pb.md.rd
+        span.mt.s(style="width: 20%")
+        span.mt.i(style="width: 25%")
+        span.mt.d(style="width: 30%")
+  hr
+
+  h2 Accessibility
+  p This component is not yet accessible. Stay tuned for updates in future releases.
+  hr
+
+  h2 Customize with Stylus
+  p Customizing the visibility classes is easy with the Stylus variables provided in the
+    span.class settings/visibility.styl
+    | file.
+  h4 Stylus
+  pre
+    code(data-language="stylus")
+      include css/gia.ui/_components/progress-bars.settings.styl
+  hr
+
+  h2 Semantic Markup with Stylus
+  p You can create your own progress bars using our Stylus mixins.
+  h3 Basic
+  p You can use the
+    span.class create-progress-bar-base()
+    | and
+    span.class create-progress-bar-meter()
+    | mixins to create your own progress bars, like so:
+  h4 Stylus
+  pre
+    code(data-language="stylus").
+      .custom-progress-bar-base
+        create-progress-bar-base()
+        > span.custom-progress-bar-meter
+          create-progress-bar-meter()
+  h4 HTML
+  pre
+    code(data-language="html").
+      <div class="custom-progress-bar-base">
+        <span class="custom-progress-bar-meter" style="width: [1 - 100]%"></span>
+      </div>
+  h3 Advanced
+  p You can further customize your progress bars using the provided options in the
+    span.class create-progress-bar-base()
+    | and
+    span.class create-progress-bar-meter()
+    | mixins:
+  p We can add a border radius to our progress bar through our mixins:
+  h4 Stylus
+  pre
+    code(data-language="stylus").
+      .custom-progress-bar-base
+        create-progress-bar-base(
+          background-color = progress-bar-background-color,
+          height = progress-bar-default-height,
+          margin-bottom = progress-bar-margin-bottom)
+        create-border-radius(size = radius)
+        > span.custom-progress-bar-meter
+          create-progress-bar-meter(background-color = progress-bar-default-color)
+          create-border-radius(size = radius)
+  hr
+
+  h3 Stylus Errors?
+  p Make sure you import this line in main file:
+  h4 Stylus
+  pre
+    code(data-language="css").
+      @import '_components/progress-bars'

@@ -53,11 +53,13 @@ configs =
 
 	jade:
 		pretty: true
+		locals: {}
 
 	coffee:
 		bare: false
 
 	stylus:
+		linenos: false
 		compress: false
 		use: nib()
 		import: 'nib'
@@ -131,7 +133,8 @@ gulp.task 'connect', () ->
 		port: options.p
 		root: './www',
 		livereload: false
-		})
+		fallback: './www/errors/404.html'
+	})
 
 gulp.task 'watch', [], () ->
 	gulp.watch paths.html.jade, ['html']

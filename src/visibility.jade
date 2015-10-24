@@ -1,5 +1,7 @@
 block variables
+  - component = 'visibility'
   - title = 'Visibility'
+
 extends _layouts/docs
 
 block body
@@ -18,23 +20,23 @@ block body
       pre
         code(data-language="html").
           <p class="sfso">This text is shown only on a small screen.</p>
-          <p class="sfmu">This text is shown on medium screens and up.</p>
+          <p class="sfm">This text is shown on medium screens and up.</p>
           <p class="sfmo">This text is shown only on a medium screen.</p>
-          <p class="sflu">This text is shown on large screens and up.</p>
+          <p class="sfl">This text is shown on large screens and up.</p>
           <p class="sflo">This text is shown only on a large screen.</p>
-          <p class="sfxlu">This text is shown on xlarge screens and up.</p>
+          <p class="sfxl">This text is shown on xlarge screens and up.</p>
           <p class="sfxlo">This text is shown only on an xlarge screen.</p>
-          <p class="sfxxlu">This text is shown on xxlarge screens and up.</p>
+          <p class="sfxxl">This text is shown on xxlarge screens and up.</p>
     .cl.md-6
       h4 Rendered HTML
       p.mb-5.sfso This text is shown only on a small screen.
-      p.mb-5.sfmu This text is shown on medium screens and up.
+      p.mb-5.sfm This text is shown on medium screens and up.
       p.mb-5.sfmo This text is shown only on a medium screen.
-      p.mb-5.sflu This text is shown on large screens and up.
+      p.mb-5.sfl This text is shown on large screens and up.
       p.mb-5.sflo This text is shown only on a large screen.
-      p.mb-5.sfxlu This text is shown on xlarge screens and up.
+      p.mb-5.sfxl This text is shown on xlarge screens and up.
       p.mb-5.sfxlo This text is shown only on an xlarge screen.
-      p.mb-5.sfxxlu This text is shown on xxlarge screens and up.
+      p.mb-5.sfxxl This text is shown on xxlarge screens and up.
   hr
 
   h2 Hide by Screen Size
@@ -47,37 +49,37 @@ block body
       pre
         code(data-language="html").
           <p class="hfso">You are <strong>not</strong> on a small screen.</p>
-          <p class="hfmu">You are <strong>not</strong> on a medium, large, xlarge, or xxlarge screen.</p>
+          <p class="hfm">You are <strong>not</strong> on a medium, large, xlarge, or xxlarge screen.</p>
           <p class="hfmo">You are <strong>not</strong> on a medium screen.</p>
-          <p class="hflu">You are <strong>not</strong> on a large, xlarge, or xxlarge screen.</p>
+          <p class="hfl">You are <strong>not</strong> on a large, xlarge, or xxlarge screen.</p>
           <p class="hflo">You are <strong>not</strong> on a large screen.</p>
-          <p class="hfxlu">You are <strong>not</strong> on an xlarge screen and up.</p>
+          <p class="hfxl">You are <strong>not</strong> on an xlarge screen and up.</p>
           <p class="hfxlo">You are <strong>not</strong> on an xlarge screen.</p>
-          <p class="hfxxlu">You are <strong>not</strong> on an xxlarge screen.</p>
+          <p class="hfxxl">You are <strong>not</strong> on an xxlarge screen.</p>
     .cl.md-6
       h4 Rendered HTML
       p.mb-5.hfso You are 
         strong not 
         | on a small screen.
-      p.mb-5.hfmu You are 
+      p.mb-5.hfm You are 
         strong not 
         | on a medium, large, xlarge, or xxlarge screen.
       p.mb-5.hfmo You are 
         strong not 
         | on a medium screen.
-      p.mb-5.hflu You are 
+      p.mb-5.hfl You are 
         strong not 
         | on a large, xlarge, or xxlarge screen.
       p.mb-5.hflo You are 
         strong not 
         | on a large screen.
-      p.mb-5.hfxlu You are 
+      p.mb-5.hfxl You are 
         strong not 
         | on an xlarge screen and up.
       p.mb-5.hfxlo You are 
         strong not 
         | on an xlarge screen.
-      p.mb-5.hfxxlu You are 
+      p.mb-5.hfxxl You are 
         strong not 
         | on an xxlarge screen.
   hr
@@ -150,7 +152,7 @@ block body
   h4 Stylus
   pre
     code(data-language="stylus")
-      include css/ui/_components/visibility.settings.styl
+      include css/gia.ui/_components/visibility.settings.styl
   hr
 
   h3 Stylus Errors?

@@ -5,7 +5,6 @@ fore-color-calc(background-color = transparent, dark-color = black, light-color 
 	else
 		light-color
 
-
 radius-classes(_radius = radius, _round = round)
 	&.{radius-class}
 		border-radius _radius
@@ -38,3 +37,6 @@ rem-calc(value, base-value = rem-base)
 		return unit(value / base-value, 'rem')
 	else
 		return unit(value, u)
+		
+create-border-radius(size = radius)
+	border-radius size
